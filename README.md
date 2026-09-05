@@ -2,6 +2,7 @@
 
 An overlay that, with SaltyNX, allows you to set custom display refresh rate and FPS in Nintendo Switch retail games.
 
+I made a fork to this to add my own specific features. Since this will include LLMs generated code, it will be its own seperate thing.
 > [!NOTE]
 > The tool utilizes detection of the graphics API to manipulate FPS, and in special cases, it requires using patches made specifically for each game version to achieve more than 30 FPS. Overlay has a built-in option to download configs used to make patches. Repository storing those configs can be found [HERE](https://github.com/masagrator/FPSLocker-Warehouse)<br>
 Max supported YAML size is 32kB, though it can be expanded in the next updates.
