@@ -579,7 +579,7 @@ public:
 							(Shared -> FPSlocked) = 60;
 						}
 						else if ((Shared -> FPSlocked) < isOLED ? supportedHandheldRefreshRatesOLED[sizeof(supportedHandheldRefreshRatesOLED)-1] : supportedHandheldRefreshRates[sizeof(supportedHandheldRefreshRates)-1]) {
-							(Shared -> FPSlocked) += 5;
+							(Shared -> FPSlocked) += 1;
 						}
 						if (!oldSalty && displaySync.ds.handheld) {
 							if (R_SUCCEEDED(SaltySD_Connect())) {
@@ -629,7 +629,7 @@ public:
 							(Shared -> FPSlocked) = 25;
 						}
 						else if ((Shared -> FPSlocked) > 15) {
-							(Shared -> FPSlocked) -= 5;
+							(Shared -> FPSlocked) -= 1;
 						}
 						if (!oldSalty && displaySync.ds.handheld) {
 							if (R_SUCCEEDED(SaltySD_Connect())) {
