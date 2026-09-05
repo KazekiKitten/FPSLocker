@@ -578,7 +578,7 @@ public:
 						else if (!(Shared -> FPSlocked)) {
 							(Shared -> FPSlocked) = 60;
 						}
-						else if ((Shared -> FPSlocked) < isOLED ? supportedHandheldRefreshRatesOLED[sizeof(supportedHandheldRefreshRatesOLED)-1] : supportedHandheldRefreshRates[sizeof(supportedHandheldRefreshRates)-1]) {
+						else if ((Shared -> FPSlocked) < 255) {
 							(Shared -> FPSlocked) += 1;
 						}
 						if (!oldSalty && displaySync.ds.handheld) {
@@ -677,7 +677,56 @@ public:
 					}
 					return false;
 				});	
-				list->addItem(clickableListItem2);			
+list->addItem(clickableListItem2);
+				
+				auto *clickableListItem3 = new tsl::elm::ListItem2(getStringID(Lang::Id_IncreaseFPSTarget5));
+				clickableListItem3->setClickListener([](u64 keys) { 
+					if ((keys & HidNpadButton_A) && PluginRunning) {
+						if ((Shared -> FPSmode) == 2 && !(Shared -> FPSlocked)) {
+							(Shared -> FPSlocked) = 35;
+						}
+						else if (!(Shared -> FPSlocked)) {
+							(Shared -> FPSlocked) = 60;
+						}
+						else if ((Shared -> FPSlocked) < 255) {
+							(Shared -> FPSlocked) += 5;
+						}
+						if (!oldSalty && displaySync.ds.handheld) {
+							if (R_SUCCEEDED(SaltySD_Connect())) {
+								bool skip = false;
+								SaltySD_SetDisplayRefreshRate((Shared -> FPSlocked));
+								for (uint8_t x = 0; x < sizeof(supportedHandheldRefreshRates); x++) {
+									if (supportedHandheldRefreshRates[x] == (Shared -> FPSlocked)) {
+										refreshRate_g = (Shared -> FPSlocked);
+										skip = true;
+									}
+									else if (supportedHandheldRefreshRates[x] == ((Shared -> FPSlocked) * 2)) {
+										refreshRate_g = (Shared -> FPSlocked) * 2;
+										skip = true;
+									}
+									else if (supportedHandheldRefreshRates[x] == ((Shared -> FPSlocked) * 3)) {
+										refreshRate_g = (Shared -> FPSlocked) * 3;
+										skip = true;
+									}
+									else if (supportedHandheldRefreshRates[x] == ((Shared -> FPSlocked) * 4)) {
+										refreshRate_g = (Shared -> FPSlocked) * 4;
+										skip = true;
+									}
+									if (skip) break;
+								}
+								if (!skip) {
+									refreshRate_g = 60;
+								}
+								Shared->displaySync.ds.handheld = refreshRate_g > 0;
+								SaltySD_Term();
+							}
+						}
+						saveSettings();
+						return true;
+					}
+					return false;
+				});
+				list->addItem(clickableListItem3);
 			}
 
 			auto *clickableListItem4 = new tsl::elm::ListItem2(getStringID(Lang::Id_DisableCustomFPSTarget));

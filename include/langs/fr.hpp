@@ -21,6 +21,7 @@ namespace FRA {
 		"NX-FPS est actif.",
 		"Le patch force les 60 Hz.",
 		"Augmenter les FPS",
+		"Augmenter les FPS de 5",
 		"Réduire les FPS",
 		"Changer les FPS",
 		"Rétablir les FPS par défaut",

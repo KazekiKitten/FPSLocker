@@ -21,6 +21,7 @@ namespace PTBR {
 		"NX-FPS está em execução.",
 		"O patch agora força 60 Hz.",
 		"Aumentar meta de FPS",
+		"Aumentar meta de FPS 5",
 		"Diminuir meta de FPS",
 		"Alterar meta de FPS",
 		"Desativar meta de FPS personalizada",

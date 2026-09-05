@@ -21,6 +21,7 @@ namespace GER {
 		"NX-FPS läuft.",
 		"Patch erzwingt nun 60 Hz.",
 		"Erhöhe FPS-Ziel",
+		"Erhöhe FPS-Ziel um 5",
 		"Senke FPS-Ziel",
 		"Ändere FPS-Ziel",
 		"Benutzerdefiniertes FPS-Ziel deaktivieren",

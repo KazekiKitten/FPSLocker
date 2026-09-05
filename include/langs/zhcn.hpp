@@ -21,6 +21,7 @@ namespace ZHCN {
 		"NX-FPS正在运行.",
 		"补丁当前强制60Hz模式",
 		"增大目标FPS",
+		"增大目标FPS 5",
 		"减小目标FPS",
 		"切换目标FPS",
 		"禁用自定义的目标FPS",

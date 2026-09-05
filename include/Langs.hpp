@@ -21,6 +21,7 @@ namespace Lang {
         Id_NXFPSIsRunning,
         Id_PatchIsNotForcing60Hz,
         Id_IncreaseFPSTarget,
+        Id_IncreaseFPSTarget5,
         Id_DecreaseFPSTarget,
         Id_ChangeFPSTarget,
         Id_DisableCustomFPSTarget,

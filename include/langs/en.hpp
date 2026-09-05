@@ -21,6 +21,7 @@ namespace ENG {
 		"NX-FPS is running.",
 		"Patch is now forcing 60 Hz.",
 		"Increase FPS target",
+		"Increase FPS target by 5",
 		"Decrease FPS target",
 		"Change FPS target",
 		"Disable custom FPS target",

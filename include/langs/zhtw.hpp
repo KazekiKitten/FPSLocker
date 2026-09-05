@@ -21,6 +21,7 @@ namespace ZHTW {
 		"NX-FPS 正在運作。",
 		"修正檔現正強制使用 60 Hz。",
 		"增加 FPS 目標",
+		"增加 FPS 目標 5",
 		"減少 FPS 目標",
 		"變更 FPS 目標",
 		"停用自訂 FPS 目標",
